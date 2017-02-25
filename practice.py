@@ -83,7 +83,7 @@ def hello_world():
 #    prints "Hi" followed by the name.
 
 def say_hi(name):
-    """Prints a greeting
+    """Print a greeting.
     """
 
     print "Hi %s" % (name)
@@ -93,6 +93,8 @@ def say_hi(name):
 #    multiplies them together. Print the result.
 
 def print_product(num1, num2):
+    """Print the product of the variables.
+    """
     print num1 * num2
 
 
@@ -100,11 +102,16 @@ def print_product(num1, num2):
 #    and prints the string that many times
 
 def repeat_string(string, num):
+    """Print the string multiple times, depending on the num variable.
+    """
     print string * num
+
 
 # 5. Write a function called 'print_sign' that takes an integer and prints
 #    "Higher than 0" if higher than zero and "Lower than 0" if lower than zero.
 #    If the integer is zero, print "Zero".
+
+def print_sign():
 
 
 # 6. Write a function called 'is_divisible_by_three' that takes an integer and
