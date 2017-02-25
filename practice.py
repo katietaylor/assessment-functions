@@ -83,7 +83,7 @@ def hello_world():
 #    prints "Hi" followed by the name.
 
 def say_hi(name):
-    """
+    """Prints a greeting
     """
 
     print "Hi %s" % (name)
@@ -92,10 +92,15 @@ def say_hi(name):
 # 3. Write a function called 'print_product' that takes two integers and
 #    multiplies them together. Print the result.
 
+def print_product(num1, num2):
+    print num1 * num2
+
 
 # 4. Write a function called 'repeat_string' that takes a string and an integer
 #    and prints the string that many times
 
+def repeat_string(string, num):
+    print string * num
 
 # 5. Write a function called 'print_sign' that takes an integer and prints
 #    "Higher than 0" if higher than zero and "Lower than 0" if lower than zero.
