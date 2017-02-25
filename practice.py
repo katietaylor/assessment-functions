@@ -111,22 +111,47 @@ def repeat_string(string, num):
 #    "Higher than 0" if higher than zero and "Lower than 0" if lower than zero.
 #    If the integer is zero, print "Zero".
 
-def print_sign():
+def print_sign(num):
+    """Compare the integer to 0 and print whether it is higher, lower or equal
+    to zero.
+    """
+    if num > 0:
+        print "Higher than 0"
+    elif num < 0:
+        print "Lower than 0"
+    else:
+        print "Zero"
 
 
 # 6. Write a function called 'is_divisible_by_three' that takes an integer and
 #    returns a boolean (True or False), depending on whether the number is
 #    evenly divisible by 3.
 
+def is_divisible_by_three(num):
+    """Check if the remainder of the integer divided by three is 0.
+    """
+    return num % 3 == 0
+
 
 # 7. Write a function called 'num_spaces' that takes a sentence as one string
 #    and returns the number of spaces.
+
+def num_spaces(sentence):
+    """Count the number of spaces in the sentence.
+    """
+    return sentence.count(" ")
 
 
 # 8. Write a function called 'total_meal_price' that can be passed a meal price
 #    and a tip percentage. It should return the total amount paid
 #    (price + price * tip). **However:** passing in the tip percentage should
 #    be optional; if not given, it should default to 15%.
+
+def total_meal_price(meal_price, tip_percent=0.15):
+    """Calculate the tip and add it to the total meal price.
+    """
+    return meal_price + meal_price * tip_percent
+
 
 
 # 9. Write a function called 'sign_and_parity' that takes an integer as an
