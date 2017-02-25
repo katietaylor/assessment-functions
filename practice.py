@@ -72,8 +72,21 @@ PART TWO:
 #    prints "Hello World".
 
 
+def hello_world():
+    """Print the string 'Hello World'
+    """
+
+    print "Hello World"
+
+
 # 2. Write a function called 'say_hi' that takes a name as a string and
 #    prints "Hi" followed by the name.
+
+def say_hi(name):
+    """
+    """
+
+    print "Hi %s" % (name)
 
 
 # 3. Write a function called 'print_product' that takes two integers and
