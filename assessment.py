@@ -127,9 +127,23 @@ def append_to_list(lst, num):
 #    Your function should return the total cost of the item, including tax and
 #    fees.
 
-def calculate_price(FILL_ME_IN):
+def calculate_price(base_price, state, tax=0.05):
+    """Calculates the total price of an item by adding the base price, taxes
+       (default tax is 5%) and any state specific fees."""
 
-    pass
+    total_price = base_price + (base_price * tax)
+
+    if state == "CA":
+        total_price += total_price * 0.03
+    elif state == "PA":
+        total_price += 2
+    elif state == "MA":
+        if base_price < 100:
+            total_price += 1
+        else:
+            total_price += 3
+
+    return total_price
 
 
 ###############################################################################
