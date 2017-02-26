@@ -200,6 +200,19 @@ def calculate_price(base_price, state, tax=0.05):
 # isn't something we've discussed yet in class; you might need to google how to
 # write a Python function that takes in an arbitrary number of arguments.
 
+def add_to_list(items, *item):
+    """Extends the list to include any number of arguments passed into the
+    function.
+
+    >>> add_to_list([1, 2], 1, 3, 5)
+    [1, 2, (1, 3, 5)]
+
+    >>> add_to_list([], 1)
+    [(1,)]
+    """
+    items.append(item)
+    return items
+
 
 # 2. Make a new function with a nested inner function.
 # The outer function will take in a word.
@@ -212,6 +225,8 @@ def calculate_price(base_price, state, tax=0.05):
 
 #>>> outer("Balloonicorn")
 #('Balloonicorn', 'BalloonicornBalloonicornBalloonicorn')
+
+
 
 
 ###############################################################################
