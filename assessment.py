@@ -204,11 +204,11 @@ def add_to_list(items, *item):
     """Extends the list to include any number of arguments passed into the
     function.
 
-    >>> add_to_list([1, 2], 1, 3, 5)
-    [1, 2, (1, 3, 5)]
+        >>> add_to_list([1, 2], 1, 3, 5)
+        [1, 2, (1, 3, 5)]
 
-    >>> add_to_list([], 1)
-    [(1,)]
+        >>> add_to_list([], 1)
+        [(1,)]
     """
     items.append(item)
     return items
@@ -227,12 +227,17 @@ def add_to_list(items, *item):
 #('Balloonicorn', 'BalloonicornBalloonicornBalloonicorn')
 
 def take_in_word(word):
+    """Outer function takes in a word.
+    Inner function repeats the word 3 times.
+    Returns the word and the multplied word.
+
+        >>> take_in_word("Balloonicorn")
+        ('Balloonicorn', 'BalloonicornBalloonicornBalloonicorn')
+
+    """
     def multiply_word(word):
         return word * 3
-    return multiply_word(word)
-
-print take_in_word(Balloonicorn)
-
+    return word, multiply_word(word)
 
 
 ###############################################################################
