@@ -78,11 +78,10 @@ included in the doctest.
 #        and returns a boolean if the fruit is a "strawberry", "cherry", or
 #        "blackberry."
 
-
 def is_berry(fruit):
     """Determines if fruit is a berry"""
 
-    pass
+    return fruit == "strawberry" or fruit == "cherry" or fruit == "blackberry"
 
 
 # (b) Write another function, shipping_cost(), which calculates shipping cost
@@ -93,7 +92,10 @@ def is_berry(fruit):
 def shipping_cost(fruit):
     """Calculates shipping cost of fruit"""
 
-    pass
+    if is_berry(fruit) is True:
+        return 0
+    else:
+        return 5
 
 
 # 2. Make a function that takes in a number and a list of numbers. It should
