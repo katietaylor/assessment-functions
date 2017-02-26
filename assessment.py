@@ -59,8 +59,31 @@ included in the doctest.
 #    (a) Write a function that takes a town name as a string and evaluates to
 #        `True` if it is your hometown, and `False` otherwise.
 
+def is_hometown(town):
+    """Check if town is my hometown.
+
+        >>> is_hometown("San Luis Obispo")
+        True
+        >>> is_hometown("San Francisco")
+        False
+    """
+
+    town = town.lower()
+    return town == "san luis obispo"
+
+
 #    (b) Write a function that takes a first and last name as arguments and
 #        returns the concatenation of the two names in one string.
+
+def combine_name(first_name, last_name):
+    """Concatenates the first name and last name into one string.
+
+        >>> combine_name('katie', 'taylor')
+        'katietaylor'
+    """
+
+    return first_name + last_name
+
 
 #    (c) Write a function that takes a home town, a first name, and a last name
 #        as arguments, calls both functions from part (a) and (b) and prints
@@ -68,6 +91,21 @@ included in the doctest.
 #        here', where are you from?" depending on what the function from part
 #        (a) evaluates to.
 
+def greeting(town, first_name, last_name):
+    """Prints a greeting to the parameter names. Greeting differs based on
+    whether the hometown is the same as my hometown.
+
+        >>> greeting("San Luis Obispo", "Mike", "Krukow")
+        Hi, Mike Krukow, we're from the same place!
+
+        >>> greeting("Racine", "Duane", "Kuiper")
+        Hi Duane Kuiper, where are you from?
+    """
+
+    if is_hometown(town) is True:
+        print "Hi, %s %s, we're from the same place!" % (first_name, last_name)
+    else:
+        print "Hi %s %s, where are you from?" % (first_name, last_name)
 
 
 ###############################################################################
@@ -131,8 +169,10 @@ def calculate_price(base_price, state, tax=0.05):
     """Calculates the total price of an item by adding the base price, taxes
        (default tax is 5%) and any state specific fees."""
 
+    # calculate total price prior to possible state fees
     total_price = base_price + (base_price * tax)
 
+    # determine state and apply appropriate fees
     if state == "CA":
         total_price += total_price * 0.03
     elif state == "PA":
