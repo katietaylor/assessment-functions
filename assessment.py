@@ -64,7 +64,7 @@ def is_hometown(town):
 
         >>> is_hometown("San Luis Obispo")
         True
-        >>> is_hometown("San Francisco")
+        >>> is_hometown("san francisco")
         False
     """
 
@@ -75,11 +75,11 @@ def is_hometown(town):
 #    (b) Write a function that takes a first and last name as arguments and
 #        returns the concatenation of the two names in one string.
 
-def combine_name(first_name, last_name):
+def concatenate_name(first_name, last_name):
     """Concatenates the first name and last name into one string.
 
-        >>> combine_name('katie', 'taylor')
-        'katietaylor'
+        >>> concatenate_name('William', 'Riker')
+        'WilliamRiker'
     """
 
     return first_name + last_name
@@ -91,21 +91,23 @@ def combine_name(first_name, last_name):
 #        here', where are you from?" depending on what the function from part
 #        (a) evaluates to.
 
-def greeting(town, first_name, last_name):
+def greet(town, first_name, last_name):
     """Prints a greeting to the parameter names. Greeting differs based on
     whether the hometown is the same as my hometown.
 
-        >>> greeting("San Luis Obispo", "Mike", "Krukow")
-        Hi, Mike Krukow, we're from the same place!
+        >>> greet("San Luis Obispo", "Mike", "Krukow")
+        Hi, MikeKrukow, we're from the same place!
 
-        >>> greeting("Racine", "Duane", "Kuiper")
-        Hi Duane Kuiper, where are you from?
+        >>> greet("Racine", "Duane", "Kuiper")
+        Hi DuaneKuiper, where are you from?
     """
 
+    full_name = concatenate_name(first_name, last_name)
+
     if is_hometown(town) is True:
-        print "Hi, %s %s, we're from the same place!" % (first_name, last_name)
+        print "Hi, %s, we're from the same place!" % (full_name)
     else:
-        print "Hi %s %s, where are you from?" % (first_name, last_name)
+        print "Hi %s, where are you from?" % (full_name)
 
 
 ###############################################################################
@@ -173,11 +175,11 @@ def calculate_price(base_price, state, tax=0.05):
     total_price = base_price + (base_price * tax)
 
     # determine state and apply appropriate fees
-    if state == "CA":
+    if state.upper() == "CA":
         total_price += total_price * 0.03
-    elif state == "PA":
+    elif state.upper() == "PA":
         total_price += 2
-    elif state == "MA":
+    elif state.upper() == "MA":
         if base_price < 100:
             total_price += 1
         else:
@@ -201,8 +203,12 @@ def calculate_price(base_price, state, tax=0.05):
 # write a Python function that takes in an arbitrary number of arguments.
 
 def add_to_list(items, *item):
-    """Extends the list to include any number of arguments passed into the
+    """Appends the list to include any number of arguments passed into the
     function.
+
+    Note: This function is written to append all arguments to the list. Append
+    adds all arguments as a single tuple. If we want to add each argument
+    separately to the list, this function could use extend().
 
         >>> add_to_list([1, 2], 1, 3, 5)
         [1, 2, (1, 3, 5)]
@@ -233,11 +239,13 @@ def take_in_word(word):
 
         >>> take_in_word("Balloonicorn")
         ('Balloonicorn', 'BalloonicornBalloonicornBalloonicorn')
-
     """
+
     def multiply_word(word):
         return word * 3
-    return word, multiply_word(word)
+
+    multiplied_word = multiply_word(word)
+    return word, multiplied_word
 
 
 ###############################################################################
