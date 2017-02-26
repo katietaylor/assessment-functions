@@ -81,7 +81,9 @@ included in the doctest.
 def is_berry(fruit):
     """Determines if fruit is a berry"""
 
-    return fruit.lower() == "strawberry" or fruit == "cherry" or fruit == "blackberry"
+    return fruit.lower() == "strawberry" \
+        or fruit.lower() == "cherry" \
+        or fruit.lower() == "blackberry"
 
 
 # (b) Write another function, shipping_cost(), which calculates shipping cost
@@ -106,8 +108,7 @@ def append_to_list(lst, num):
     """Creates a new list consisting of the old list with the given number
        added to the end."""
 
-    pass
-
+    return lst + [num]
 
 
 # 3. Write a function calculate_price to calculate an item's total cost by
