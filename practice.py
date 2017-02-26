@@ -204,6 +204,19 @@ print sign
 #    greeting.
 
 
+def full_title(name, job_title="Engineer"):
+    return "%s %s" % (job_title, name)
+
+
+def write_letter(name, job_title, sender_name):
+    """
+    """
+    addressee = full_title(name, job_title)
+
+    print "Dear %s, I think you are amazing! Sincerely, %s" \
+        % (addressee, sender_name)
+
+
 ###############################################################################
 
 # END OF PRACTICE: You can ignore everything below.
