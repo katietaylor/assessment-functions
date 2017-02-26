@@ -153,7 +153,6 @@ def total_meal_price(meal_price, tip_percent=0.15):
     return meal_price + meal_price * tip_percent
 
 
-
 # 9. Write a function called 'sign_and_parity' that takes an integer as an
 #    argument and returns two pieces of information as strings --- "Positive"
 #    or "Negative" and "Even" or "Odd". The two strings should be returned in
@@ -166,7 +165,25 @@ def total_meal_price(meal_price, tip_percent=0.15):
 def sign_and_parity(num):
     """
     """
-    
+    num_properties = []
+
+    if num % 2 == 0:
+        num_properties.append("Even")
+    else:
+        num_properties.append("Odd")
+
+    if num > 0:
+        num_properties.append("Positive")
+    elif num < 0:
+        num_properties.append("Negative")
+    else:
+        num_properties.append(None)
+
+    return num_properties
+
+parity, sign = sign_and_parity(3)
+print parity
+print sign
 
 
 ###############################################################################
