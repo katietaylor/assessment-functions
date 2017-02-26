@@ -81,7 +81,7 @@ included in the doctest.
 def is_berry(fruit):
     """Determines if fruit is a berry"""
 
-    return fruit == "strawberry" or fruit == "cherry" or fruit == "blackberry"
+    return fruit.lower() == "strawberry" or fruit == "cherry" or fruit == "blackberry"
 
 
 # (b) Write another function, shipping_cost(), which calculates shipping cost
