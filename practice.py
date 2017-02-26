@@ -163,7 +163,10 @@ def total_meal_price(meal_price, tip_percent=0.15):
 #    it's even or odd). Print sign and parity.
 
 def sign_and_parity(num):
-    """
+    """Check if greater than or less than zero to determine sign. Zero has no
+    sign so it is given a value of None.
+    Check if divisible by 2 to determine parity.
+    Return the results in a list [parity, sign]
     """
     num_properties = []
 
@@ -205,11 +208,13 @@ print sign
 
 
 def full_title(name, job_title="Engineer"):
+    """Print the job title (defaulted to Engineer) and name.
+    """
     return "%s %s" % (job_title, name)
 
 
 def write_letter(name, job_title, sender_name):
-    """
+    """Write letter the addressee from the sender_name parameter.
     """
     addressee = full_title(name, job_title)
 
