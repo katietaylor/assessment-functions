@@ -121,9 +121,12 @@ def greet(town, first_name, last_name):
 def is_berry(fruit):
     """Determines if fruit is a berry"""
 
-    return fruit.lower() == "strawberry" \
-        or fruit.lower() == "cherry" \
-        or fruit.lower() == "blackberry"
+    try:
+        return fruit.lower() == "strawberry" \
+            or fruit.lower() == "cherry" \
+            or fruit.lower() == "blackberry"
+    except AttributeError:
+        print "The input must be a string."
 
 
 # (b) Write another function, shipping_cost(), which calculates shipping cost
@@ -170,6 +173,13 @@ def append_to_list(lst, num):
 def calculate_price(base_price, state, tax=0.05):
     """Calculates the total price of an item by adding the base price, taxes
        (default tax is 5%) and any state specific fees."""
+
+    # Check if tax is greater than 1 inidicating a possible entry error.
+    # Function will still continue but warns the user.
+    if tax > 1:
+        print "Warning: The tax should be input as a decimal, not a percent. "\
+              "This function was called with a tax greater than 1. If this was "\
+              "a mistake, the total price will be too high."
 
     # calculate total price prior to possible state fees
     total_price = base_price + (base_price * tax)
@@ -241,9 +251,11 @@ def take_in_word(word):
         ('Balloonicorn', 'BalloonicornBalloonicornBalloonicorn')
     """
 
+    # Defines the inner function which repeats the word 3 times
     def multiply_word(word):
         return word * 3
 
+    # Calls the inner function
     multiplied_word = multiply_word(word)
     return word, multiplied_word
 
