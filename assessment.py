@@ -226,6 +226,12 @@ def add_to_list(items, *item):
 #>>> outer("Balloonicorn")
 #('Balloonicorn', 'BalloonicornBalloonicornBalloonicorn')
 
+def take_in_word(word):
+    def multiply_word(word):
+        return word * 3
+    return multiply_word(word)
+
+print take_in_word(Balloonicorn)
 
 
 
